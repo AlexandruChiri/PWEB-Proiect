@@ -1,6 +1,6 @@
 namespace MobyLabWebProgramming.Core.Entities;
 
-public class CPU
+public class CPU : Article
 {
     public float Frequency { get; set; } = default!;
     public int Cores { get; set; } = default!;
