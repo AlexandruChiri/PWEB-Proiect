@@ -1,11 +1,24 @@
+using MobyLabWebProgramming.Core.Enums;
+
 namespace MobyLabWebProgramming.Core.Entities;
 
-public class CPU : Article
+public abstract class Cpu : Article
 {
-    public float Frequency { get; set; } = default!;
-    public int Cores { get; set; } = default!;
-    public int Threads { get; set; } = default!;
-    public int Tdp { get; set; } = default!;
-    public string Socket { get; set; } = default!;
-    public bool IGPU { get; set; } = default!;
+    public float Frequency { get; set; }
+    public int Cores { get; set; }
+    public int Threads { get; set; }
+    public int Tdp { get; set; }
+    public string Socket { get; set; }
+    public bool Igpu { get; set; }
+
+    public Cpu(string name, int price, string manufacturer, float frequency, int cores, int threads, int tdp,
+        string socket, bool iGpu) : base(name, ArticleTypeEnum.Cpu, price, manufacturer)
+    {
+        Frequency = frequency;
+        Cores = cores;
+        Threads = threads;
+        Tdp = tdp;
+        Socket = socket;
+        Igpu = iGpu;
+    }
 }

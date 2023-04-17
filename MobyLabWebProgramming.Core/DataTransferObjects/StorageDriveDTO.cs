@@ -1,13 +1,18 @@
+using MobyLabWebProgramming.Core.Entities;
+using MobyLabWebProgramming.Core.Enums;
+
 namespace MobyLabWebProgramming.Core.DataTransferObjects;
 
-public class StorageDriveDTO
+public class StorageDriveDTO : ArticleDTO
 {
-    public Guid Id { get; set; }
-    public string Name { get; set; } = default!;
-    public string Type { get; set; } = default!;
-    public float Price { get; set; } = default!;
-    public string Manufacturer { get; set; } = default!;
-    public string StorageDriveType { get; set; } = default!;
-    public int Capacity { get; set; } = default!;
-    public string Interface { get; set; } = default!;
+    public StorageDriveTypeEnum DriveType { get; }
+    public int Capacity { get; }
+    public string Interface { get; }
+
+    public StorageDriveDTO(StorageDrive storageDrive) : base(storageDrive)
+    {
+        DriveType = storageDrive.DriveType;
+        Capacity = storageDrive.Capacity;
+        Interface = storageDrive.Interface;
+    }
 }

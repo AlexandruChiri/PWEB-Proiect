@@ -1,8 +1,19 @@
+using MobyLabWebProgramming.Core.Enums;
+
 namespace MobyLabWebProgramming.Core.Entities;
 
 public class StorageDrive : Article
 {
-    public string Type { get; set; } = default!;
-    public int Capacity { get; set; } = default!;
-    public string Interface { get; set; } = default!;
+    public StorageDriveTypeEnum DriveType { get; set; }
+    public int Capacity { get; set; }
+    public string Interface { get; set; }
+
+    public StorageDrive(string name, int price, string manufacturer, StorageDriveTypeEnum driveType, int capacity, string iinterface)
+        : base(name, ArticleTypeEnum.StorageDrive, price, manufacturer)
+    {
+        DriveType = driveType;
+        Capacity = capacity;
+        Interface = iinterface;
+    }
 }
+

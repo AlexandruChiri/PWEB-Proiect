@@ -1,14 +1,19 @@
+using MobyLabWebProgramming.Core.Entities;
+
 namespace MobyLabWebProgramming.Core.DataTransferObjects;
 
-public class MotherboardDTO
+public class MotherboardDTO : ArticleDTO
 {
-    public Guid Id { get; set; }
-    public string Name { get; set; } = default!;
-    public string Type { get; set; } = default!;
-    public float Price { get; set; } = default!;
-    public string Manufacturer { get; set; } = default!;
-    public int RAM_Slots { get; set; } = default!;
-    public string RAM_Type { get; set; } = default!;
-    public int RAM_Capacity { get; set; } = default!;
-    public string CPU_Socket { get; set; } = default!;
+    public int RamSlots { get; set; }
+    public string RamType { get; set; }
+    public int RamCapacity { get; set; }
+    public string CpuSocket { get; set; }
+
+    public MotherboardDTO(Motherboard motherboard) : base(motherboard)
+    {
+        RamSlots = motherboard.RamSlots;
+        RamType = motherboard.RamType;
+        RamCapacity = motherboard.RamCapacity;
+        CpuSocket = motherboard.CpuSocket;
+    }
 }

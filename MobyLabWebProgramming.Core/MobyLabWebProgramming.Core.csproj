@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Compile Remove="Entities\GPU.cs" />
+    <Compile Remove="Enums\ArticleType.cs" />
   </ItemGroup>
 
 </Project>

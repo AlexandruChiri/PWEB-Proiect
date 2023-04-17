@@ -1,16 +1,23 @@
+using MobyLabWebProgramming.Core.Entities;
+
 namespace MobyLabWebProgramming.Core.DataTransferObjects;
 
-public class CPU_DTO
+public class CpuDto : ArticleDTO
 {
-    public Guid Id { get; set; }
-    public string Name { get; set; } = default!;
-    public string Type { get; set; } = default!;
-    public float Price { get; set; } = default!;
-    public string Manufacturer { get; set; } = default!;
-    public float Frequency { get; set; } = default!;
-    public int Cores { get; set; } = default!;
-    public int Threads { get; set; } = default!;
-    public int Tdp { get; set; } = default!;
-    public string Socket { get; set; } = default!;
-    public bool IGPU { get; set; } = default!;
+    public float Frequency { get; }
+    public int Cores { get; }
+    public int Threads { get; }
+    public int Tdp { get; }
+    public string Socket { get; }
+    public bool Igpu { get; }
+
+    public CpuDto(Cpu cpu) : base(cpu)
+    {
+        Frequency = cpu.Frequency;
+        Cores = cpu.Cores;
+        Threads = cpu.Threads;
+        Tdp = cpu.Tdp;
+        Socket = cpu.Socket;
+        Igpu = cpu.Igpu;
+    }
 }
