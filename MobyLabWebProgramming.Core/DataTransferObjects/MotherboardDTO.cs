@@ -1,13 +1,14 @@
 using MobyLabWebProgramming.Core.Entities;
+using MobyLabWebProgramming.Core.Enums;
 
 namespace MobyLabWebProgramming.Core.DataTransferObjects;
 
 public class MotherboardDTO : ArticleDTO
 {
-    public int RamSlots { get; set; }
-    public string RamType { get; set; }
-    public int RamCapacity { get; set; }
-    public string CpuSocket { get; set; }
+    public int RamSlots { get; }
+    public RamTypeEnum RamType { get; }
+    public int RamCapacity { get; }
+    public CpuSocketEnum CpuSocket { get; }
 
     public MotherboardDTO(Motherboard motherboard) : base(motherboard)
     {

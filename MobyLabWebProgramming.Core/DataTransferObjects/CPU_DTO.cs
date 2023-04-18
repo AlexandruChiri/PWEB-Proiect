@@ -1,4 +1,5 @@
 using MobyLabWebProgramming.Core.Entities;
+using MobyLabWebProgramming.Core.Enums;
 
 namespace MobyLabWebProgramming.Core.DataTransferObjects;
 
@@ -8,8 +9,8 @@ public class CpuDto : ArticleDTO
     public int Cores { get; }
     public int Threads { get; }
     public int Tdp { get; }
-    public string Socket { get; }
-    public bool Igpu { get; }
+    public CpuSocketEnum Socket { get; }
+    public short Igpu { get; }
 
     public CpuDto(Cpu cpu) : base(cpu)
     {

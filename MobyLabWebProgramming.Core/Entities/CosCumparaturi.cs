@@ -2,6 +2,7 @@ namespace MobyLabWebProgramming.Core.Entities;
 
 public class CosCumparaturi : BaseEntity
 {
+    public Guid UserId { get; set; }
     public ICollection<AddedArticle> Articles { get; }
     public User User { get; }
 
@@ -9,6 +10,7 @@ public class CosCumparaturi : BaseEntity
     {
         Articles = new List<AddedArticle>();
         User = user;
+        UserId = user.Id;
     }
 
     public int AddArticle(Article article, int cnt)
@@ -17,7 +19,7 @@ public class CosCumparaturi : BaseEntity
         AddedArticle? addedArticle = Articles.FirstOrDefault(art => art.Aarticle.Id.Equals(article.Id));
         if (addedArticle == null)
         {
-            addedArticle = new AddedArticle(article, cnt);
+            addedArticle = new AddedArticle(article, cnt, this);
             Articles.Add(addedArticle);
             ret = cnt;
         }

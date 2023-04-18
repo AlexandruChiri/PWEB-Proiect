@@ -7,7 +7,7 @@ public class StorageDriveDTO : ArticleDTO
 {
     public StorageDriveTypeEnum DriveType { get; }
     public int Capacity { get; }
-    public string Interface { get; }
+    public StorageDriveInterfaceEnum Interface { get; }
 
     public StorageDriveDTO(StorageDrive storageDrive) : base(storageDrive)
     {

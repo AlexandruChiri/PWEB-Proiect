@@ -1,10 +1,11 @@
 using MobyLabWebProgramming.Core.Entities;
+using MobyLabWebProgramming.Core.Enums;
 
 namespace MobyLabWebProgramming.Core.DataTransferObjects;
 
 public class RamDTO : ArticleDTO
 {
-    public string RamType { get; set; } = default!;
+    public RamTypeEnum RamType { get; set; } = default!;
     public int Capacity { get; set; } = default!;
     public int Frequency { get; set; } = default!;
 

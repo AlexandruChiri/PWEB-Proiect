@@ -44,4 +44,11 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="EntityConfigurations\CPUConfiguration.cs" />
+    <Compile Remove="EntityConfigurations\MotherboardConfiguration.cs" />
+    <Compile Remove="EntityConfigurations\RamConfiguration.cs" />
+    <Compile Remove="EntityConfigurations\StorageDriveConfiguration.cs" />
+  </ItemGroup>
+
 </Project>

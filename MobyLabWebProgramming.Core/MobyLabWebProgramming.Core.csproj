@@ -19,6 +19,14 @@
   <ItemGroup>
     <Compile Remove="Entities\GPU.cs" />
     <Compile Remove="Enums\ArticleType.cs" />
+    <Compile Remove="Entities\CPU.cs" />
+    <Compile Remove="Entities\Motherboard.cs" />
+    <Compile Remove="Entities\RAM.cs" />
+    <Compile Remove="Entities\StorageDrive.cs" />
+    <Compile Remove="DataTransferObjects\CPU_DTO.cs" />
+    <Compile Remove="DataTransferObjects\MotherboardDTO.cs" />
+    <Compile Remove="DataTransferObjects\RamDTO.cs" />
+    <Compile Remove="DataTransferObjects\StorageDriveDTO.cs" />
   </ItemGroup>
 
 </Project>
