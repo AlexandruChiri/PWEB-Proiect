@@ -6,17 +6,17 @@ public class AddedArticle : BaseEntity
 {
     public Guid CosId { get; set; }
     public Guid ArticleId { get; set; }
-    public Article Aarticle { get; set; }
-    public int Cnt { get; set; }
+    public Article Aarticle { get; set; } = default!;
+    public int Cnt { get; set; } = default!;
 
-    public AddedArticle(Article aarticle, int cnt, CosCumparaturi cosCumparaturi)
-    {
-        CosId = cosCumparaturi.Id;
-        Debug.Assert(Aarticle != null, nameof(Aarticle) + " != null");
-        ArticleId = Aarticle.Id;
-        Aarticle = aarticle;
-        Cnt = cnt;
-    }
+    // public AddedArticle(Article aarticle, int cnt, CosCumparaturi cosCumparaturi)
+    // {
+    //     CosId = cosCumparaturi.Id;
+    //     Debug.Assert(Aarticle != null, nameof(Aarticle) + " != null");
+    //     ArticleId = Aarticle.Id;
+    //     Aarticle = aarticle;
+    //     Cnt = cnt;
+    // }
 
     public float GetPrice()
     {

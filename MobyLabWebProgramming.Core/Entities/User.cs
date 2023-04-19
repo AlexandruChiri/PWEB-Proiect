@@ -12,7 +12,7 @@ public class User : BaseEntity
     public string Password { get; set; } = default!;
     public UserRoleEnum Role { get; set; } = default!;
     public CosCumparaturi Cos { get; set; } = default!;
-    public ICollection<Comanda> Comenzi { get; } = new List<Comanda>();
+    public ICollection<Comanda> Comenzi { get; set; } = default!;
 
     /// <summary>
     /// References to other entities such as this are used to automatically fetch correlated data, this is called a navigation property.

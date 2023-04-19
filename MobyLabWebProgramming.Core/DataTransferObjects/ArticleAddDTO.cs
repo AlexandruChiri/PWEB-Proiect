@@ -1,9 +1,8 @@
-using MobyLabWebProgramming.Core.Entities;
 using MobyLabWebProgramming.Core.Enums;
 
 namespace MobyLabWebProgramming.Core.DataTransferObjects;
 
-public class ArticleDTO
+public class ArticleAddDTO
 {
     public Guid Id { get; set; }
     public string Name { get; set; } = default!;
@@ -11,14 +10,4 @@ public class ArticleDTO
     public float Price { get; set; } = default!;
     public string Manufacturer { get; set; } = default!;
     public string Description { get; set; } = default!;
-
-    // public ArticleDTO(Article article)
-    // {
-    //     Id = article.Id;
-    //     Name = article.Name;
-    //     Type = article.Type;
-    //     Price = article.Price;
-    //     Manufacturer = article.Manufacturer;
-    //     Description = article.Description;
-    // }
 }

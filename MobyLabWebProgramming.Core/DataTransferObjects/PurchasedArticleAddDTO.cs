@@ -1,8 +1,6 @@
-using MobyLabWebProgramming.Core.Enums;
-
 namespace MobyLabWebProgramming.Core.DataTransferObjects;
 
-public class PurchasedArticleDTO
+public class PurchasedArticleAddDTO
 {
     public Guid Id { get; set; }
     public ArticleDTO Aarticle { get; set; } = default!;
