@@ -16,7 +16,7 @@ public interface IAddedArticleService
     /// <summary>
     /// GetUsers returns page with user information from the database.
     /// </summary>
-    public Task<ServiceResponse<PagedResponse<AddedArticleDTO>>> GetAddedArticles(PaginationSearchQueryParams pagination, CancellationToken cancellationToken = default);
+    public Task<ServiceResponse<PagedResponse<AddedArticleDTO>>> GetAddedArticles(PaginationSearchQueryParams pagination, UserDTO? requestingUser = default, CancellationToken cancellationToken = default);
     /// <summary>
     /// GetUserCount returns the number of users in the database.
     /// </summary>
@@ -30,7 +30,7 @@ public interface IAddedArticleService
     /// UpdateUser updates an user and verifies if requesting user has permissions to update it, if the user is his own then that should be allowed.
     /// If the requesting user is null then no verification is performed as it indicates that the application.
     /// </summary>
-    public Task<ServiceResponse> UpdateAddedArticle(AddedArticleUpdateDTO user, UserDTO? requestingUser = default, CancellationToken cancellationToken = default);
+    public Task<ServiceResponse> UpdateAddedArticle(AddedArticleUpdateDTO addedArticle, UserDTO? requestingUser = default, CancellationToken cancellationToken = default);
     /// <summary>
     /// DeleteUser deletes an user and verifies if requesting user has permissions to delete it, if the user is his own then that should be allowed.
     /// If the requesting user is null then no verification is performed as it indicates that the application.

@@ -12,4 +12,5 @@ public static class CommonErrors
     public static ErrorMessage TechnicalSupport => new(HttpStatusCode.InternalServerError, "An unknown error occurred, contact the technical support!", ErrorCodes.TechnicalError);
     public static ErrorMessage ArticleNotFound => new(HttpStatusCode.NotFound, "Article doesn't exist!", ErrorCodes.EntityNotFound);
     public static ErrorMessage AddedArticleNotFound => new(HttpStatusCode.NotFound, "You did not add this article!", ErrorCodes.EntityNotFound);
+    public static ErrorMessage ComandaNotFound => new(HttpStatusCode.NotFound, "Order doesn't exist!", ErrorCodes.EntityNotFound);
 }

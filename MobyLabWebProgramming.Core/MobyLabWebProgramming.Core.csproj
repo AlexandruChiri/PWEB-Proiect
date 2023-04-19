@@ -27,6 +27,15 @@
     <Compile Remove="DataTransferObjects\MotherboardDTO.cs" />
     <Compile Remove="DataTransferObjects\RamDTO.cs" />
     <Compile Remove="DataTransferObjects\StorageDriveDTO.cs" />
+    <Compile Remove="DataTransferObjects\Useless DTOs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="DataTransferObjects\Useless DTOs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="DataTransferObjects\Useless DTOs\**" />
   </ItemGroup>
 
 </Project>

@@ -9,13 +9,18 @@ public class PurchasedArticle : BaseEntity
     public int Cnt { get; set; } = default!;
     public float Price { get; } = default!;
 
-    // public PurchasedArticle(AddedArticle addedArticle, Comanda comanda)
-    // {
-    //     ComandaId = comanda.Id;
-    //     ArticleId = addedArticle.Id;
-    //     Aarticle = addedArticle.Aarticle;
-    //     PricePerUnit = addedArticle.Aarticle.Price;
-    //     Cnt = addedArticle.Cnt;
-    //     Price = PricePerUnit * Cnt;
-    // }
+    public PurchasedArticle()
+    {
+        
+    }
+
+    public PurchasedArticle(AddedArticle addedArticle, Comanda comanda)
+    {
+        ComandaId = comanda.Id;
+        ArticleId = addedArticle.Aarticle.Id;
+        Aarticle = addedArticle.Aarticle;
+        PricePerUnit = addedArticle.Aarticle.Price;
+        Cnt = addedArticle.Cnt;
+        Price = PricePerUnit * Cnt;
+    }
 }

@@ -8,4 +8,5 @@ public class PurchasedArticleDTO
     public ArticleDTO Aarticle { get; set; } = default!;
     public float Price { get; set; } = default!;
     public int Cnt { get; set; } = default!;
+    public Guid ComandaId { get; set; }
 }
