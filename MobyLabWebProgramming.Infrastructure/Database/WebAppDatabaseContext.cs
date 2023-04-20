@@ -11,6 +11,7 @@ public sealed class WebAppDatabaseContext : DbContext
 {
     public WebAppDatabaseContext(DbContextOptions<WebAppDatabaseContext> options, bool migrate = true) : base(options)
     {
+        // Database.ExecuteSqlRaw("drop table User;");
         if (migrate)
         {
             Database.Migrate();

@@ -46,7 +46,7 @@ public sealed class UserFileProjectionSpec : BaseSpec<UserFileProjectionSpec, Us
 
         var searchExpr = $"%{search.Replace(" ", "%")}%";
 
-        Query.Where(e => EF.Functions.ILike(e.Name, searchExpr) ||
-                         EF.Functions.ILike(e.Description, searchExpr));
+        Query.Where(e => EF.Functions.ILike(e.Name, searchExpr)/* ||
+                         EF.Functions.ILike(e.Description, searchExpr)*/);
     }
 }

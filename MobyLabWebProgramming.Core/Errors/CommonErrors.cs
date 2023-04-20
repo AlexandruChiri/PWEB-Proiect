@@ -13,4 +13,5 @@ public static class CommonErrors
     public static ErrorMessage ArticleNotFound => new(HttpStatusCode.NotFound, "Article doesn't exist!", ErrorCodes.EntityNotFound);
     public static ErrorMessage AddedArticleNotFound => new(HttpStatusCode.NotFound, "You did not add this article!", ErrorCodes.EntityNotFound);
     public static ErrorMessage ComandaNotFound => new(HttpStatusCode.NotFound, "Order doesn't exist!", ErrorCodes.EntityNotFound);
+    public static ErrorMessage ComandaNotFoundOrForbiden => new(HttpStatusCode.NotFound, "Order doesn't exist or doesn't belong to this user!", ErrorCodes.EntityNotFound);
 }

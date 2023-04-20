@@ -30,7 +30,24 @@ public class ComandaService : IComandaService
 
         return result != null ? 
             ServiceResponse<ComandaDTO>.ForSuccess(result) : 
-            ServiceResponse<ComandaDTO>.FromError(CommonErrors.UserNotFound); // Pack the result or error into a ServiceResponse.
+            ServiceResponse<ComandaDTO>.FromError(CommonErrors.ComandaNotFound); // Pack the result or error into a ServiceResponse.
+    }
+
+    public async Task<ServiceResponse<ComandaDTO>> GetComanda(Guid id, UserDTO? requestingUser,
+        CancellationToken cancellationToken = default)
+    {
+        if (requestingUser != null && requestingUser.Role != UserRoleEnum.Admin)
+        {
+            ComandaDTO? result = await _repository.GetAsync(new ComandaProjectionSpec(id, requestingUser),
+                cancellationToken); // Get an order using a specification on the repository.
+            
+            return result != null ? 
+                ServiceResponse<ComandaDTO>.ForSuccess(result) : 
+                ServiceResponse<ComandaDTO>.FromError(CommonErrors.ComandaNotFoundOrForbiden);
+            // Pack the result or error into a ServiceResponse.
+        }
+
+        return await GetComanda(id, cancellationToken);
     }
 
     public async Task<ServiceResponse<PagedResponse<ComandaDTO>>> GetComenzi(PaginationSearchQueryParams pagination, CancellationToken cancellationToken = default)

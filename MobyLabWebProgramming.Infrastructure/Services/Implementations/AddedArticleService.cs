@@ -15,7 +15,6 @@ namespace MobyLabWebProgramming.Infrastructure.Services.Implementations;
 public class AddedArticleService : IAddedArticleService
 {
     private readonly IRepository<WebAppDatabaseContext> _repository;
-    private IAddedArticleService _addedArticleServiceImplementation;
 
     /// <summary>
     /// Inject the required services through the constructor.
@@ -38,10 +37,10 @@ public class AddedArticleService : IAddedArticleService
         ServiceResponse<int>.ForSuccess(await _repository.GetCountAsync<AddedArticle>(cancellationToken)); // Get the count of all user entities in the database.
 
     public async Task<ServiceResponse<PagedResponse<AddedArticleDTO>>> GetAddedArticles(
-        PaginationSearchQueryParams pagination, UserDTO? requestingUser = default,
+        PaginationSearchQueryParams pagination,
         CancellationToken cancellationToken = default)
     {
-        var result = await _repository.PageAsync(pagination, new AddedArticleProjectionSpec(pagination.Search, requestingUser.CosId), cancellationToken); // Use the specification and pagination API to get only some entities from the database.
+        var result = await _repository.PageAsync(pagination, new AddedArticleProjectionSpec(pagination.Search), cancellationToken); // Use the specification and pagination API to get only some entities from the database.
 
         return ServiceResponse<PagedResponse<AddedArticleDTO>>.ForSuccess(result);
     }

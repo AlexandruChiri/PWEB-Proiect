@@ -29,13 +29,25 @@ public class ComandaProjectionSpec : BaseSpec<ComandaProjectionSpec, Comanda, Co
     {
     }
 
-    public ComandaProjectionSpec(Guid? userId, UserDTO? _)
+    public ComandaProjectionSpec(Guid? id, UserDTO user)
     {
-        if (userId == null)
+        if (id == null)
         {
             return;
         }
 
-        Query.Where(e => e.UserId == userId);
+        Query
+            .Where(e => e.Id == id)
+            .Where(e => e.UserId == user.Id);
+    }
+
+    public ComandaProjectionSpec(UserDTO? user)
+    {
+        if (user == null)
+        {
+            return;
+        }
+
+        Query.Where(e => e.UserId == user.Id);
     }
 }

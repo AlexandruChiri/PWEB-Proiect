@@ -16,7 +16,7 @@ public interface IAddedArticleService
     /// <summary>
     /// GetUsers returns page with user information from the database.
     /// </summary>
-    public Task<ServiceResponse<PagedResponse<AddedArticleDTO>>> GetAddedArticles(PaginationSearchQueryParams pagination, UserDTO? requestingUser = default, CancellationToken cancellationToken = default);
+    public Task<ServiceResponse<PagedResponse<AddedArticleDTO>>> GetAddedArticles(PaginationSearchQueryParams pagination, CancellationToken cancellationToken = default);
     /// <summary>
     /// GetUserCount returns the number of users in the database.
     /// </summary>

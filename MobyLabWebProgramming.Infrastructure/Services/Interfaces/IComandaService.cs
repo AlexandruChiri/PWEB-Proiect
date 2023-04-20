@@ -9,6 +9,8 @@ public interface IComandaService
 {
     public Task<ServiceResponse<ComandaDTO>> GetComanda(Guid id, CancellationToken cancellationToken = default);
     
+    public Task<ServiceResponse<ComandaDTO>> GetComanda(Guid id, UserDTO requestingUser, CancellationToken cancellationToken = default);
+    
     public Task<ServiceResponse<PagedResponse<ComandaDTO>>> GetComenzi(PaginationSearchQueryParams pagination, CancellationToken cancellationToken = default);
 
     public Task<ServiceResponse<int>> GetComandaCount(CancellationToken cancellationToken = default);
